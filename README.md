@@ -1,6 +1,6 @@
 # mcs_app
 
-A new Flutter application.
+An official app of MCS
 
 ## Getting Started
 
