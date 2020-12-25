@@ -8,11 +8,18 @@ class Nav extends StatefulWidget {
 }
 
 int _curentIndex = 0;
+List<Widget> _widgetOption = <Widget>[
+  Text('Home'),
+  Text('Me'),
+];
 
 class _NavState extends State<Nav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Center(
+        child: _widgetOption.elementAt(_curentIndex),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _curentIndex,
         items: <BottomNavigationBarItem>[
@@ -21,11 +28,13 @@ class _NavState extends State<Nav> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_outlined),
+            icon: Icon(Icons.account_box_outlined),
             label: 'Me',
           ),
         ],
         selectedItemColor: Theme.of(context).accentColor,
+        selectedFontSize: 14,
+        unselectedFontSize: 14,
         onTap: (int index) {
           setState(() {
             _curentIndex = index;
