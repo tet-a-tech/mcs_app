@@ -18,7 +18,7 @@ class _NavState extends State<Nav> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
+            icon: Icon(Icons.explore_outlined),
             label: 'Services',
           ),
           BottomNavigationBarItem(
