@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mcs_app/Nav.dart';
 
 void main() {
@@ -12,10 +13,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.white,
         accentColor: Colors.red,
+        primaryTextTheme: GoogleFonts.montserratTextTheme(),
       ),
       darkTheme: ThemeData(
         primaryColor: Colors.black,
         accentColor: Colors.red,
+        primaryTextTheme: GoogleFonts.montserratTextTheme(),
       ),
       home: Nav(),
     );
