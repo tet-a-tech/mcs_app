@@ -22,7 +22,7 @@ class _NavState extends State<Nav> {
             label: 'Services',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
+            icon: Icon(Icons.account_circle_outlined),
             label: 'Me',
           )
         ],
