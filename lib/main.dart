@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "MCS",
       theme: ThemeData(
         primaryColor: Colors.white,
         accentColor: Colors.red,
