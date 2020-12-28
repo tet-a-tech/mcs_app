@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mcs_app/interface/Pages/Home/HomePage.dart';
+import 'package:mcs_app/interface/Pages/Me/MePage.dart';
 
 class Nav extends StatefulWidget {
   Nav({Key key}) : super(key: key);
@@ -9,15 +11,15 @@ class Nav extends StatefulWidget {
 
 int _curentIndex = 0;
 List<Widget> _widgetOption = <Widget>[
-  Text('Home'),
-  Text('Me'),
+  HomePage(),
+  MePage(),
 ];
 
 class _NavState extends State<Nav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Container(
         child: _widgetOption.elementAt(_curentIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
