@@ -12,11 +12,15 @@ class MePage extends StatelessWidget {
       body: Center(
           child: Column(children: [
         Text('Me'),
-        ElevatedButton(
-            onPressed: () {
-              context.read<AuthService>().sighOut();
-            },
-            child: Text('Logout'))
+        RaisedButton(
+          splashColor: Theme.of(context).accentColor,
+          highlightColor: Theme.of(context).accentColor,
+          color: Theme.of(context).primaryColor,
+          child: Text('Logout'),
+          onPressed: () {
+            context.read<AuthService>().signOut();
+          },
+        )
       ])),
     );
   }

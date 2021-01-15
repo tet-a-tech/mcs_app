@@ -1,6 +1,6 @@
 class Indicator {
   String name;
-  double value;
+  dynamic value;
 
   Indicator({this.name, this.value});
 }

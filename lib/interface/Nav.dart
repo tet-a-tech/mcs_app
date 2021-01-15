@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mcs_app/interface/Pages/Home/HomePage.dart';
 import 'package:mcs_app/interface/Pages/Me/MePage.dart';
 
@@ -23,6 +24,8 @@ class _NavState extends State<Nav> {
         child: _widgetOption.elementAt(_curentIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedLabelStyle: GoogleFonts.montserrat(),
+        unselectedLabelStyle: GoogleFonts.montserrat(),
         currentIndex: _curentIndex,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -35,8 +38,8 @@ class _NavState extends State<Nav> {
           ),
         ],
         selectedItemColor: Theme.of(context).accentColor,
-        selectedFontSize: 14,
-        unselectedFontSize: 14,
+        selectedFontSize: 16,
+        unselectedFontSize: 16,
         onTap: (int index) {
           setState(() {
             _curentIndex = index;
