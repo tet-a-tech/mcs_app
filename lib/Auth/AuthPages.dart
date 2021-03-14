@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:mcs_app/Services/AuthService.dart';
 
@@ -13,17 +14,24 @@ class _LoginPageState extends State<LoginPage> {
 
   String email;
   String password;
+  bool showLogin = true;
 
   void _login() {
     email = _emailContoller.text;
     password = _passwordContoller.text;
     context.read<AuthService>().signIn(email: email, password: password);
+
+    _emailContoller.clear();
+    _passwordContoller.clear();
   }
 
   void _register() {
     email = _emailContoller.text;
     password = _passwordContoller.text;
     context.read<AuthService>().signUp(email: email, password: password);
+
+    _emailContoller.clear();
+    _passwordContoller.clear();
   }
 
   Widget _logo() {
@@ -84,7 +92,10 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _form(String label, void func()) {
+  Widget _form(
+    String label,
+    void func(),
+  ) {
     return Container(
       child: Column(
         children: [
@@ -105,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 50,
                 width: MediaQuery.of(context).size.width,
                 child: button(label, func),
-              ))
+              )),
         ],
       ),
     );
@@ -118,9 +129,30 @@ class _LoginPageState extends State<LoginPage> {
       body: Column(
         children: <Widget>[
           _logo(),
-          _form('Login', _login),
+          (showLogin
+              ? Column(
+                  children: <Widget>[
+                    _form(
+                      'Login',
+                      _login,
+                    ),
+                  ],
+                )
+              : 1337),
         ],
       ),
     );
+  }
+}
+
+class RegisterPage extends StatefulWidget {
+  @override
+  _RegisterPageState createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

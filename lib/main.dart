@@ -7,7 +7,6 @@ import 'package:mcs_app/Auth/AuthPages.dart';
 import 'package:mcs_app/Services/AuthService.dart';
 import 'package:mcs_app/interface/Nav.dart';
 import 'package:provider/provider.dart';
-import 'package:mcs_app/Services/FitnessService.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,12 +24,6 @@ class MyApp extends StatelessWidget {
         ),
         StreamProvider(
           create: (context) => context.read<AuthService>().authStateChanges,
-        ),
-        /*Provider<FitnessService>(
-          create: (_) =>  FitnessService(),
-        ),*/
-        Provider(
-          create: (context) => context.watch<FitnessService>(),
         ),
       ],
       child: MaterialApp(

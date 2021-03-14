@@ -11,10 +11,11 @@ class AuthService {
   Future<String> signIn({String email, String password}) async {
     try {
       await auth.signInWithEmailAndPassword(email: email, password: password);
-      dynamic user = auth.currentUser;
-      return user;
+
+      return "signed";
     } on FirebaseAuthException catch (e) {
-      return e.message;
+      print('Failed with error code: ${e.code}');
+      print(e.message);
     }
   }
 

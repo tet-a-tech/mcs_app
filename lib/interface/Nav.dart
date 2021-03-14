@@ -38,8 +38,8 @@ class _NavState extends State<Nav> {
           ),
         ],
         selectedItemColor: Theme.of(context).accentColor,
-        selectedFontSize: 16,
-        unselectedFontSize: 16,
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
         onTap: (int index) {
           setState(() {
             _curentIndex = index;
